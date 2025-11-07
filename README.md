@@ -1,2 +1,2 @@
 # Consegna_Compiti
-# Questa repository verra utilizzatta per scoppi scolstici 
+# Questa repository verra utilizzatta per scoppi scolastici 
