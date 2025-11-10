@@ -16,4 +16,3 @@ adesso fai le modifiche
 tracialle con git status e aggiungilli al traciamento di git con git ad . 
 git commit -m "tuo messagio"
 git push
-fshdjsdhsdhd

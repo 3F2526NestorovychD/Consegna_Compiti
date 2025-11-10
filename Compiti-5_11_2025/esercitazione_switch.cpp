@@ -7,7 +7,7 @@ int main(void){
 //dichiarazzioni 
 int scelta;
 string figura;
-double area,base,alteza, lato, diaMag, diaMin; 
+double area, base , alteza, lato, diaMag, diaMin; 
 
 do{
 cout << "Scegli la figura e scrivi un numero associato alla tua scelta: \n";
