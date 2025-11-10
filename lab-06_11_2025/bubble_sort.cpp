@@ -12,8 +12,7 @@ int man(){
     int vettore[n];
 
 for(int i = 0; i < n; i++){
-    
-    cin >> vettore[i];
+     cin >> vettore[i];
 }
 
 
