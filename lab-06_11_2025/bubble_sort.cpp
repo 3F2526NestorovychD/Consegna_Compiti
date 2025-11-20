@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    // Dichiarazioni
+
     int lun, flag;
 
     cout << "Inserisca la lunghezza della lista da riordinare: "; //assumo che si vuole un bubbble sort dal piu' piccolo al più grande 
@@ -17,7 +17,7 @@ int main() {
     vet[i] = flag ? (vet[i] = flag, vet[i]) : (rand() % 100);
 }
 
-    // il buble Sort
+    // il buble Sort stesso
     for (int i = 0; i < lun - 1; i++) {
         for (int j = 0; j < lun - i - 1; j++) {
             if (vet[j] > vet[j + 1]) {                   
