@@ -63,7 +63,7 @@ cin >> scelta;
             default:
                 cout << "Scelta non valida, RIPROVA.\n";
                 break;
-
+                
 }
 
 if(scelta >=1 && scelta <= 4)
