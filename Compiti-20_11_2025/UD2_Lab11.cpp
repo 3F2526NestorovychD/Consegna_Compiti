@@ -5,10 +5,7 @@
 
 void importo() {
     char nome[15];
-    float kmInizio;
-    float kmFine;
-    float kmPercorsi;
-    float costo;
+    float kmInizio, kmFine, kmPercorsi, costo;
 
     printf("Inserire il nome: ");
     scanf("%s", nome);
@@ -29,4 +26,6 @@ void importo() {
 
 int main() {
     importo();
-    system("pause");  } 
+    system("pause");  
+    return 0;
+    }
