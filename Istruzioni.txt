@@ -15,11 +15,12 @@ nel caso prova git remote add origin https://github.com/3F2526NestorovychD/Conse
 
 adesso fai le modifiche
 
-tracciale con git status e aggiungili al tracciamento di git con "git ad ."
+tracciale con git status e aggiungili al tracciamento di git con "git add ."
 poi: 
  git commit -m "tuo massaggio"
  git push
 
 
-se per qualche motivo non vi da l'accesso dovete modificare le credenziali, quindi premette start, andate ai gestione credenziari, poi Gestione windows e scegliete credenziali windows e cercate il sito di GitHub
+se per qualche motivo non vi da l'accesso dovete modificare le credenziali, quindi premette start, andate ai 
+gestione credenziari, poi Gestione windows e scegliete credenziali windows e cercate il sito di GitHub
 Adesso dovete o eliminarli e rifare il push (piu sicuro perché non potete sbagliare) oppure modificate a mano.
