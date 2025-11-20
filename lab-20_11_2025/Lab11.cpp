@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define CK 1.20  
+const float CK = 1.2;
 
 void importo() {
     char nome[15];
@@ -27,5 +27,6 @@ void importo() {
 int main() {
     importo();
     system("pause");  
+    
     return 0;
     }
