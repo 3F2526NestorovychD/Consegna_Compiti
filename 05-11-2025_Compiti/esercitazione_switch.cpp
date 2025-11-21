@@ -62,7 +62,6 @@ cin >> scelta;
 
             default:
                 cout << "Scelta non valida, RIPROVA.\n";
-                break;
                 
 }
 
