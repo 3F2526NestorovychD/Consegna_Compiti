@@ -10,4 +10,4 @@ Mie personali:
     Tutti file.cpp devono essere salvati con soli caratteri minusculi
     Tutti i Compiti iniziano con maiuscolo
     Tutti i lab e certelle che contengono piu files(salvo per i Compiti) sono in minuscolo o
-
+    per essercizi senza un nome specifico si usa il numero della pagina con sintasi <Es-Pag><numero della pagina> 
