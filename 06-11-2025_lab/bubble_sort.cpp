@@ -14,7 +14,7 @@ int main() {
     cout << "Inserisca gli elementi della lista:" << endl;
     for (int i = 0; i < lun; i++) {
     cin >> flag;
-    vet[i] = flag ? (vet[i] = flag, vet[i]) : (rand() % 100); // se uttente inserisce input non valido, inserisco numeri casuali tra 0 e 99
+    vet[i] = flag ? flag: (rand() % 100); // se uttente inserisce input non valido, inserisco numeri casuali tra 0 e 99
 }
 
     // il buble Sort stesso
