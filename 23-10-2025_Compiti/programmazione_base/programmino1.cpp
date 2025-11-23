@@ -1,7 +1,6 @@
 //  verifica che un vettore di float o int sia ordinato in ordine 
 //  ascendente (popolare il vettore con valori non ordinati)
 #include <iostream>
-#include <vector>
 using namespace std;
 
 
