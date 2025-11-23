@@ -3,28 +3,27 @@
 using namespace std;
 
 int main() {
-    int dimensione, flag; 
+    int dimensione;
+    double flag;
   
-    cout << "Inserisca la dimensione del vettore: "; 
-    cin >> dimensione;  
+    cout << "Inserisca la dimensione del vettore: ";
+    cin >> dimensione;
   
     double numeri[dimensione] = {};
     cout << "Inserisca gli elementi del vettore:" << endl;
     for (int i = 0; i < dimensione; ++i) {
-        cin >> numeri[i];
+        cin >> flag;
+        numeri[i] = flag ? flag : (rand() % 100); // se uttente inserisce input non valido, inserisco numeri casuali tra 0 e 9
     }
 
-    double massimo = numeri[0];
-
+    double massimo = numeri[0]; // parto con il primo elemento
     for (int i = 0; i < dimensione; ++i) {
         if (numeri[i] > massimo) {
             massimo = numeri[i];
         }
     }
 
-
-    // numeri[i] = flag ? (numeri[i] = flag, numeri[i]) : (rand() % 100); // se uttente inserisce input non valido, inserisco numeri casuali tra 0 e 99 
-    cout << "Il numero massimo nel vettore e': " << massimo << endl;
+     cout << "Il numero massimo nel vettore e': " << massimo << endl;
 
     return 0;
 }
