@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+void massimo(){ 
     int dimensione;
     double flag;
   
@@ -24,6 +24,12 @@ int main() {
     }
 
      cout << "Il numero massimo nel vettore e': " << massimo << endl;
+}
+
+int main() {
+   
+    massimo()
+    system("pause")
 
     return 0;
 }
