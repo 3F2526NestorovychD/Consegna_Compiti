@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+void minimo(){
     int dimensione;
     double flag;
   
@@ -17,14 +17,21 @@ int main() {
         numeri[i] = flag ? flag : (rand() % 100); // se uttente inserisce input non valido, inserisco numeri casuali tra 0 e 99
     }
 
-    double minimo = numeri[0]; // parto con il primo elemento
+    double min = numeri[0]; // parto con il primo elemento
     for (int i = 0; i < dimensione; ++i) {
-        if (numeri[i] < minimo) {
-            minimo = numeri[i];
+        if (numeri[i] < min) {
+            min = numeri[i];
         }
     }
-    
-    cout << "Il numero minimo nel vettore e': " << minimo << endl;
 
+
+    cout << "Il numero minimo nel vettore e': " << min << endl;
+}
+ 
+int main() {
+    
+    minimo();
+
+    system("pause");
     return 0;
 }

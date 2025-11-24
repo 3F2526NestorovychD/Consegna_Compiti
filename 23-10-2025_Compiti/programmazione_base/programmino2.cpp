@@ -28,8 +28,8 @@ void massimo(){
 
 int main() {
    
-    massimo()
-    system("pause")
+    massimo();
+    system("pause");
 
     return 0;
 }
