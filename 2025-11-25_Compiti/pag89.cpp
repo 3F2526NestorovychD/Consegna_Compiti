@@ -4,10 +4,10 @@ void controllo()
 {
 	char nome[15];
 	int eta;
-	printf ("Inserire il nome: ");
+	printf ("Inserisca il nome: ");
 	
 	scanf("%s", &nome);
-	printf ("Inserire l'eta': ");
+	printf ("Inserisca l'eta': ");
 	scanf("%d", &eta);
 	if (eta >= 18)
 	printf("%s e' maggiorenne\n",nome);
