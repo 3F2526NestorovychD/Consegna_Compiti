@@ -17,14 +17,17 @@ void operazioni()
 			ris = n1 + n2;
 			printf("somma = %.3f\n",ris);
 			break;
+			
 		case '-':
 			ris = n1 - n2;
 			printf("differenza = %.3f\n",ris);
 			break;
+
 		case '*':
 			ris = n1 * n2;
 			printf("prodotto = %.3f\n",ris);
 			break;
+
 		case '/':
 			if (n2 == 0)
 				printf("errore\n");
@@ -34,6 +37,7 @@ void operazioni()
 				printf("divisione = %.3f\n",ris);
 			}
 			break;
+
 		default:
 			printf("Operazione inesistente\n");
 			break;
