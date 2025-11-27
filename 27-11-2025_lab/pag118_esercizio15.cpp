@@ -24,7 +24,7 @@ void CalcSpedizipne(float pessino, float tariffa, float costino)
 
 int main() {
    float pesso, prezzoBiglieto; 
-   float tarif =  0.02; // 2% per kg sopra i 20kg
+   float tarif =  0.02; // 2% 
 
     cout << "Inserisca il peso del pacco in kg: ";
     cin >> pesso;
