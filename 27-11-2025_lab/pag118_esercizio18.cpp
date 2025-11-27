@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include <algorithm>
+// #include <algorithm>. usato per transfrom che non uso più
 
 
 /* 
