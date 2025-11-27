@@ -16,7 +16,7 @@ void CalcSpedizipne(float pessino, float tariffa, float costino)
          float costoExtra = kgSopra * (costino * tariffa);
          float costoFinale = costoExtra + costino;
 
-         cout << "\nIl costo della spedizione è: " << costoFinale << "€ \n" << "insieme al costo aggiuntivo che è: " << costoExtra << "€" << endl;
+         cout << "\nIl costo della spedizione è: " << costoFinale << "€ \n" << "includendo il costo aggiuntivo che è: " << costoExtra << "€" << endl;
     }
 
 }
