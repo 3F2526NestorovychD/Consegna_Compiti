@@ -21,7 +21,7 @@ try {
 
         cin >> scelta; 
          if (!(cin)) 
-            throw invalid_argument("Input non valido per la scelta, inserire solo numeri.");
+            throw invalid_argument("Input non valido per la scelta, inserire solo numeri interi.");
         
 
         switch(scelta){
