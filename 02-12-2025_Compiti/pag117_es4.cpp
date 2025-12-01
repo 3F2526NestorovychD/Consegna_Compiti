@@ -1,26 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-    int scelta;
-    float ore;
 
-    printf("Inserisci il numero di ore: ");
+  void ConvertiOre(){
+     int scelta;
+     float ore, mins, secs;
+
+    printf("Inserisca il numero di ore: ");
     scanf("%f", &ore);
 
-    printf("Scegli la conversione:\n");
+    printf("Scelga la conversione:\n");
     printf("1 - Minuti\n");
     printf("2 - Secondi\n");
     printf("Scelta: ");
     scanf("%d", &scelta);
 
-    if (scelta == 1) {
-        printf("Minuti: %.2f\n", ore * 60);
-    } else if (scelta == 2) {
-        printf("Secondi: %.2f\n", ore * 3600);
-    } else {
-        printf("Scelta non valida.\n");
-    }
+    switch (scelta) {
+        case 1:
+            mins = ore * 60;
+            printf("%d ore equivalgono a %.2f minuti.\n", ore, mins);
+            break;
+        case 2:
+            secs = ore * 3600;
+            printf("%d ore equivalgono a %.2f secondi.\n", ore, secs);
+            break;  
+        default:
+            printf("Scelta non valida.\n");
 
+    return;
+    }
+  }
+
+int main() {
+    ConvertiOre();
+
+    system("pause");
     return 0;
 }
