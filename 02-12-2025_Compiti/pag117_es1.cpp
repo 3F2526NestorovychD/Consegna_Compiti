@@ -9,11 +9,11 @@ void SegnoNumero()
     printf ("Inserisca il numero da verificare: ");
     scanf ("%f", &num);
     if (num>0)
-      printf("il numero %.3f e' positivo\n", num);
+      printf("il suo numero %.3f e' positivo\n", num);
      else if(num<0)
       printf("Il suo numerino %.3f e' negativo" , num) ;
      else
-      printf("Il numero e' neutro o nullo\n");
+      printf("Il suo numero e' neutro o nullo\n");
 }
 
 
