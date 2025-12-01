@@ -1,0 +1,1 @@
+istruzione ISTR1 viene esguita in tutti i casi in cui C1 e' falso, indipendemnete dal valore di C2
