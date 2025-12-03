@@ -1,0 +1,4 @@
+# Ignora files di configurazione di VSCode
+.vscode/
+
+
