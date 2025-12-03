@@ -1,8 +1,26 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main() {
+	float a, b, c;
 
-    system("pause");
-    return 0;
+	printf("Inserisca tre numerini: ");
+	scanf("%f %f %f", &a, &b, &c);
+
+	if ((b - a) == (c - b)) {
+		printf("I numeri sono in progressione aritmetica.\n");
+	} else {
+		printf("I numeri NON sono in progressione aritmetica.\n");
+	}
+
+	system("pause");
+	return 0;
 }
