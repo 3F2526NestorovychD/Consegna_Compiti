@@ -1,19 +1,7 @@
 #include <iostream>
-#include <stdlib.h>
 #include <string>
-// #include <algorithm>. usato per transfrom che non uso più
+#include <cstdlib>
 
-
-/* 
-Un residence vuole un sistema per calcolare il costo per soggiornare nelle sue camere, che possono essere affittate solo per una o due settimane. Scrivi un programma che;
-ricevuti in input il numero di settimane di soggiorno e un indicatore che chieda se si desidera un supplemento di lenzuola, effettui il calcolo del costo totale di soggiorno, 
-considerando le seguenti tariffe:
-a. quota fissa: 100 €;
-b. una settimana: 600 €;
-c. due settimane: 1100 €;
-d. eventuale supplemento lenzuola: 20 € a settimana.
-
-*/
 using namespace std; 
 
 void CostoTotaleSoggiorno()
