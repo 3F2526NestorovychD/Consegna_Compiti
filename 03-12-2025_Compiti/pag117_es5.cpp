@@ -5,8 +5,8 @@
 
  int main(){
 
-    float a , b, c, delta, x1, x2; 
-    printf("Inserisca tre numeri separati da spazio: ");
+    float a, b, c, delta, x1, x2; 
+    printf("Inserisca tre coefficienti numerici della equazione di secondo grado separati da uno spazio: ");
     scanf("%f %f %f", &a, &b, &c);
 
     if(a != 0){
