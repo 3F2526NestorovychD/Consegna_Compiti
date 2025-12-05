@@ -15,7 +15,7 @@ int main() {
     printf("La media delle temperature è: %.2f°C\n", media);
 
     if (media < limite) {
-        printf("quindi il riscaldamento si accenderà.\n");
+        printf("quindi il riscaldamento si accenderà a breve.\n");
     } else {
         printf("perciò il riscaldamento NON si accenderà.\n");
     }

@@ -3,11 +3,11 @@
 
 // ax+b=0    
 int main(){
-    float a, b;
+    float a, b, x;
 
     printf("Inserisca il coeficente della x (quindi 'a'): ");
     scanf("%f", &a);
-    printf("Inserisca il valore di b: ");
+    printf("Inserisca il valore della b: ");
     scanf("%f", &b);
     
 
@@ -18,7 +18,7 @@ int main(){
             printf("L'equazione data non ha soluzioni.\n");
         }
     } else {
-        float x = -b / a;
+         x = -b / a;
         printf("La soluzione dell'equazione è x = %.3f\n", x);
     }
 

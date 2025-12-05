@@ -8,9 +8,9 @@ int main() {
 	scanf("%f %f %f", &a, &b, &c);
 
 	if ((b - a) == (c - b)) {
-		printf("I numeri sono in progressione aritmetica.\n");
+		printf("I numerini sono in progressione aritmetica.\n");
 	} else {
-		printf("I numeri NON sono in progressione aritmetica.\n");
+		printf("I numerini NON sono in progressione aritmetica.\n");
 	}
 
 	system("pause");
