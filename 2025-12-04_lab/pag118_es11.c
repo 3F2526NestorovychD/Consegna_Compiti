@@ -10,7 +10,8 @@ int main() {
 
     for (int i = 1; i < 3; i++){
        printf("Inserisca l'età del fratello %d: ", i + 1);
-       scanf("%d", eta+i); 
+       scanf("%d", &eta[i]); 
+       
        if(eta[i] > max){
            max = eta[i];
        }
