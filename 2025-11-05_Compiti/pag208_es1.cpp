@@ -1,47 +1,49 @@
-#include <iostream> 
+#include <iostream>
 #include <string>
 #include <stdexcept> //per try & catch
 using namespace std;
 
+int main(void)
+{
+    // dichiarazzioni
+    int scelta;
+    string figura;
+    double area, base, alteza, lato, diaMag, diaMin;
 
-int main(void){
-  //dichiarazzioni 
-   int scelta;
-   string figura;
-   double area, base , alteza, lato, diaMag, diaMin; 
+    try
+    {
+        do
+        {
+            cout << "Scegli la figura e scrivi un numero associato alla tua scelta: \n";
+            cout << "1 - TRIANGOLO \n";
+            cout << "2 - QUADRATO \n";
+            cout << "3 - RETTANGOLO \n";
+            cout << "4 - ROMBO \n";
+            cout << "5 - USCITA \n";
 
-try {
-    do{
-        cout << "Scegli la figura e scrivi un numero associato alla tua scelta: \n";
-        cout << "1 - TRIANGOLO \n";
-        cout << "2 - QUADRATO \n";
-        cout << "3 - RETTANGOLO \n";
-        cout << "4 - ROMBO \n";
-        cout << "5 - USCITA \n";
+            cin >> scelta;
+            if (!(cin))
+                throw invalid_argument("Input non valido per la scelta, inserire solo numeri interi.");
 
-        cin >> scelta; 
-         if (!(cin)) 
-            throw invalid_argument("Input non valido per la scelta, inserire solo numeri interi.");
-        
-
-        switch(scelta){
-            case 1: 
+            switch (scelta)
+            {
+            case 1:
                 figura = "TRIANGOLO";
                 cout << "Inserisca la base: "; // dovevamo replicare il diagramma di flusso pero a me pare strano prendere un input senza chiedere l'utente di darmelo
                 cin >> base;
                 cout << "Inserisca l'altezza: ";
                 cin >> alteza;
-                area = (base * alteza) / 2; //sarebbe utile controllare se i valori sono positivi o negativi 
+                area = (base * alteza) / 2; // sarebbe utile controllare se i valori sono positivi o negativi
                 break;
 
-            case 2: 
+            case 2:
                 figura = "QUADRATO";
                 cout << "Inserisca il Lato: ";
                 cin >> lato;
                 area = lato * lato;
                 break;
 
-            case 3: 
+            case 3:
                 figura = "RETTANGOLO";
                 cout << "Inserisca la Base: ";
                 cin >> base;
@@ -50,8 +52,8 @@ try {
                 area = base * alteza;
                 break;
 
-            case 4: 
-			    figura = "ROMBO";
+            case 4:
+                figura = "ROMBO";
                 cout << "Diagonale minore: ";
                 cin >> diaMin;
                 cout << "Diagonale maggiore: ";
@@ -65,23 +67,24 @@ try {
 
             default:
                 cout << "Scelta non valida, RIPROVA.\n";
-        }
+            }
 
-        if(scelta >=1 && scelta <= 4)
-            cout << "Area del " << figura << "=" << area << endl;
-     
-           
-    } while( scelta != 5);
- } 
+            if (scelta >= 1 && scelta <= 4)
+                cout << "Area del " << figura << "=" << area << endl;
 
-catch (const exception& e) {
-    cerr << "Errore: " << e.what() << endl;
-    return 1;
-}
- catch (...) {
+        } while (scelta != 5);
+    }
+
+    catch (const exception &e)
+    {
+        cerr << "Errore: " << e.what() << endl;
+        return 1;
+    }
+    catch (...)
+    {
         cerr << "Errore sconosciuto.\n";
         return 2;
     }
 
-return 0;
+    return 0;
 }
