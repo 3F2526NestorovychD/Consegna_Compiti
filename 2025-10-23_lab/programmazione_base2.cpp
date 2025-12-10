@@ -11,13 +11,13 @@ void massimo(){
   
     double numeri[dimensione] = {};
     cout << "Inserisca gli elementi del vettore:" << endl;
-    for (int i = 0; i < dimensione; ++i) {
+    for (int i = 0; i < dimensione; i++) {
         cin >> flag;
         numeri[i] = flag ? flag : (rand() % 100); // se uttente inserisce input non valido, inserisco numeri casuali tra 0 e 9
     }
 
     double massimo = numeri[0]; // parto con il primo elemento
-    for (int i = 0; i < dimensione; ++i) {
+    for (int i = 0; i < dimensione; i++) {
         if (numeri[i] > massimo) {
             massimo = numeri[i];
         }

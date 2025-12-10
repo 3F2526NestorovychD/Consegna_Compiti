@@ -5,7 +5,7 @@ using namespace std;
 
 
 bool INTcontrolOrdine(const int vettore[], int dimensione) { // la variabile dimensione e' interna quindi non dovrebbe causare problmemi se la uso piu volte
-    for (int i = 1; i < dimensione; ++i) {
+    for (int i = 1; i < dimensione; i++) {
         if (vettore[i] < vettore[i - 1]) {
             return false;                             
         }
@@ -14,7 +14,7 @@ bool INTcontrolOrdine(const int vettore[], int dimensione) { // la variabile dim
 }
 
 bool FLOATcontrolOrdine(const float vettore[], int dimensione) {
-    for (int i = 1; i < dimensione; ++i) {
+    for (int i = 1; i < dimensione; i++) {
         if (vettore[i] < vettore[i - 1]) {
             return false;
         }
