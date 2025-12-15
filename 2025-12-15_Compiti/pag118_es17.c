@@ -42,7 +42,7 @@ int main()
         }
     }
 
-    printf("\n--- Risultati ---\n");
+    printf("\n---   Risultati  ---\n");
     printf("Giornale piu' venduto: %s (%d copie)\n", nomeGiornaleMax, maxCopieVendute);
     printf("Incasso totale dell'edicolante: %.2f Euro\n", incassoTot);
 
