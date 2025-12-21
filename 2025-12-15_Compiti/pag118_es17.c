@@ -4,8 +4,7 @@
 
 const int num_edicole = 3;
 
-int main()
-{
+int main(){
     char nomeGiornaleMax[50] = "";
     int maxCopieVendute = -1;
     float incassoTot = 0.0;
@@ -15,8 +14,7 @@ int main()
     float GuadagnoPerCopia;
     float incassoAtuale;
 
-    for (int i = 1; i <= num_edicole; i++)
-    {
+    for (int i = 1; i <= num_edicole; i++){
         printf("\n--- Giornale %d ---\n", i);
 
         printf("Inserisca il nome del giornale: ");
