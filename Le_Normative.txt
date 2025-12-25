@@ -1,13 +1,13 @@
 Universali:
   nome dir: <data consegna>_<Tipo>_<cognome_nome>
-  essercizi in una dir: <id_esercizio>
-  quando un essercizio contiene piu files - deve essere creata una nuova cartella all'interno della dir principale
+  esercizi in una dir: <id_esercizio>
+  quando un esercizio contiene piu files - deve essere creata una nuova cartella all'interno della dir principale
 
 
 
 
 Mie personali: 
-    Tutti file.cpp devono essere salvati con soli caratteri minusculi
+    Tutti file.cpp devono essere salvati con soli caratteri minuscoli
     Tutti i Compiti iniziano con maiuscolo
-    Tutti i lab e certelle che contengono piu files(salvo per i Compiti) sono in minuscolo o
-    per essercizi senza un nome specifico si usa il numero della pagina con sintasi <Es-Pag><numero della pagina> 
+    Tutti i lab e cartelle che contengono piu files(salvo per i Compiti) sono in minuscolo o
+    per esercizi senza un nome specifico si usa il numero della pagina con sintassi <Es-Pag><numero della pagina> 
