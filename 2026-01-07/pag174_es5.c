@@ -8,7 +8,7 @@ int main() {
     printf("Inserisca il numero Y(numero di partenza): ");
     scanf("%d", &Y);
 
-    printf("Inserisci il numero X(numeri succesivi): ");
+    printf("Inserisca il numero X(numeri succesivi): ");
     scanf("%d", &X);
 
     for (int i = 1; i <= X; i++) {
