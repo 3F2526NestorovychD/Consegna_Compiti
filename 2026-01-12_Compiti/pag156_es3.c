@@ -29,5 +29,6 @@ int main() {
     printf("Massimo = %d\n", max);
     printf("Differenza = %d\n", max - min);
 
+    system("pause");
     return 0;
 }
