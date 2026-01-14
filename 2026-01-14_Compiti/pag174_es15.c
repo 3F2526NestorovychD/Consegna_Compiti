@@ -8,14 +8,14 @@ int main() {
     int maxIndex = 0;
 
     while (1) {
-        printf("Inserisci codice prodotto (0 per terminare): ");
+        printf("Inserisca codice prodotto (0 per terminare): ");
         scanf("%d", &codice[i]);
 
         if (codice[i] == 0) {
             break;
         }
 
-        printf("Inserisci prezzo: ");
+        printf("Inserisca prezzo: ");
         scanf("%f", &prezzo[i]);
 
         if (i == 0 || prezzo[i] > prezzo[maxIndex]) {
