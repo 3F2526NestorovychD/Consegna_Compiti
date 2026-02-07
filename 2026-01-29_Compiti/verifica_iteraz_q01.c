@@ -18,7 +18,7 @@ int main() {
         printf("Multipli di %d fino a 100:\n", numero);
 
         for (int i = numero; i <= 100; i += numero){
-            if (numero <= 0) { // evito loop infitto di prima in classe
+            if (numero <= 0) { // evito loop infitto di prima in classe(in verita non strettamente neccesario)
                 break; 
             }
             printf("%d ", i);

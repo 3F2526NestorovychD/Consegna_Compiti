@@ -5,7 +5,7 @@
 #include <stdexcept> // per std::invalid_argument
 using namespace std;
 
-int main() {
+int maing() {
     try {
         // ---------------- DICHIARAZIONE ----------------
         int eta;   
@@ -72,7 +72,7 @@ int main() {
 
 
         // ---meno banale
-
+ 
         if (false)
             cout << "true1" << std::endl;
             cout << "true2" << std::endl;

@@ -8,7 +8,7 @@ void importo() {
     float kmInizio, kmFine, kmPercorsi, costo;
 
     printf("Inserire il nome: ");
-    scanf("%s", nome);
+    scanf("%s", &nome);
 
     printf("Inserire i km iniziali: ");
     scanf("%f", &kmInizio);
@@ -17,8 +17,7 @@ void importo() {
     scanf("%f", &kmFine);
 
     kmPercorsi = kmFine - kmInizio;
-
-
+    
     costo = kmPercorsi * CK;
 
     printf("Gentile Sig./Sig.ra %s, deve pagare %.2f euro\n", nome, costo);
