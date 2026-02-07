@@ -1,17 +1,16 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
 
 int main(){
     FILE *fp;
-    int numero, n, i;
+    int numero, n;
     
 
     int sommaPari = 0, sommaDispari = 0;
     int contaPari = 0, contaDispari = 0;
 
-    int maxPositivo = INT_MIN;
-    int minNegativo = INT_MAX;
+    int maxPositivo = INT_MIN, minNegativo = INT_MAX;
     int trovatoPositivo = 0, trovatoNegativo = 0;
     
 
@@ -24,7 +23,7 @@ int main(){
     
     fscanf(fp, "%d", &n);
     
-    for(i = 0; i < n; i++){
+    for(int i = 0; i < n; i++){
         fscanf(fp, "%d", &numero);
         
         if(numero % 2 == 0){
