@@ -17,6 +17,7 @@ int main(){
         if(num1[i] == num2[i]){
             accumulatore += 1;
         }
+        
 
 
         printf("\nLa coppia %d di numeri \"inseritte\": %.2f & %.2f\n", i+1, num1[i], num2[i]);
