@@ -40,7 +40,7 @@ git remote add origin https://github.com/3F2526NestorovychD/Consegna_Compiti.git
 ## 3. Configurazione utente
 
 ```bash
-git config --global user.email "nestorovych.dmytro.2023@itisgalileiroma.it" 
+git config --global user.email "nestorovych.dmytro.2023@itisgalileiroma.it" #inserire la propria mail
 git config --global user.name "PC_Scolastico"   # oppure "PC_Domestico"
 ```
 
