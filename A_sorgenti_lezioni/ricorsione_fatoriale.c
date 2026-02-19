@@ -18,7 +18,6 @@ long fattoriale_did(int n) {
 }
 
 
-
 long fattoriale_pro(int n) {
     // versione non didattica
 
