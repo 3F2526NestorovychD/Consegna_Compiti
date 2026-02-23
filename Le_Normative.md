@@ -41,3 +41,4 @@ Usare estensione `.txt` per i compiti a risposta aperta che non sia codice, non 
 | `README.md` | Descrizione del repository |
 | `IstruzioniGit.txt` | Guida ai comandi Git |
 | `Le_Normative.md` | Questo file |
+| `gitignore` | Files da ignorare

@@ -1,4 +1,4 @@
-/* Commenti che iniziano con "-->" 
+ /* Commenti che iniziano con "-->" 
 sono dello studente    */
 
 #include <stdio.h>

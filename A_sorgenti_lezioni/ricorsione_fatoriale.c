@@ -45,6 +45,6 @@ int main(void)
     risultato = fattoriale_pro(numero);
     printf("Il fattoriale di %d calcolato in modo pro è %lld\n", numero, risultato);
 
-
+    
     return 0;
 }
