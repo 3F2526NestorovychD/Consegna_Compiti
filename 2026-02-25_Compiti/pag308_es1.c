@@ -33,24 +33,24 @@ int main(){
 
 
 int TotRiga(int m[N][M], int r){
-    int totale;
-    totale = 0;
+    int totale = 0;
+
     for (int j = 0; j < M; j++)
         totale += m[r][j];
     return totale;
 }
 
 int TotColonna(int m[N][M], int c){
-    int totale;
-    totale = 0;
+    int totale = 0;
+    
     for (int i = 0; i < N; i++)
         totale +=  m[i][c];
     return totale;
 }
 
 int Totale(int m[N][M]){
-    int totale;
-    totale = 0;
+    int totale = 0;
+    
     for (int i = 0; i < N; i++)
         for (int j = 0; j < M; j++)
             totale += m[i][j];
