@@ -34,7 +34,7 @@
 
 Usare estensione `.txt` per i compiti a risposta aperta che non sia codice, non usare `.md` per compiti del genere
 
-### File speciali (root del repository)
+### Files speciali (root del repository)
 
 | File | Descrizione |
 |------|-------------|
