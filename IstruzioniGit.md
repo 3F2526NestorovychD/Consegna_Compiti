@@ -7,9 +7,9 @@ Verifica l'installazione:
 ```cmd
 git -v
 ```
->usa il comando da cmd a scuola, a casa modifica dalle impostazioni
 
 Aggiungi Git al PATH di sistema:
+>usa il comando da cmd a scuola, a casa modifica dalle impostazioni
 
 ```cmd
 set path=%PATH%;C:\programmi\git\bin
