@@ -19,7 +19,7 @@ set path=%PATH%;C:\programmi\git\bin
 
 ---
 
-## 2. Clonare il repository
+## 2. Clonare la repository
 
 Apri il terminale nella cartella desiderata (apri la cartella, poi doppio click sulla barra del percorso e scrivi `CMD`).
 
@@ -27,7 +27,7 @@ Apri il terminale nella cartella desiderata (apri la cartella, poi doppio click 
 git clone <URL_repository> .
 ```
 
-> Il `.` finale significa "clona QUI dentro, senza creare una cartella aggiuntiva".
+> Il `.` finale significa "clona `QUI` dentro, senza creare una cartella aggiuntiva".
 
 Se necessario, collega manualmente il remote:
 
@@ -52,8 +52,8 @@ Dopo aver fatto le modifiche:
 
 ```bash
 git status              # controlla lo stato dei file
-git add .               # aggiungi tutti i file al tracciamento
-git commit -m "tuo messaggio"
+git add .               # aggiungi tutti i file al tracciamento, usare `git add <nome_file>` per singoli file
+git commit -m "<tuo messaggio>"
 git push
 ```
 
@@ -68,3 +68,4 @@ Se il push viene rifiutato per problemi di credenziali:
 3. Vai su **Credenziali Windows**
 4. Cerca la voce relativa a `github.com`
 5. **Elimina** la credenziale e rifai il push (un attimino più sicuro), oppure modificala a mano.
+- in qualunque caso dovrai fare il login.
