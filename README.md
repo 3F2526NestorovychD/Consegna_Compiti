@@ -32,7 +32,7 @@
 
 ### Estensioni
 
-Usare estensione `.txt` per i compiti a risposta aperta che non sia codice, non usare `.md` per compiti del genere
+Usare estensione `.txt` per i compiti a risposta aperta che non sia codice, non usare **mai** `.md` per compiti del genere (a meno che sia richiesto).
 
 ### Files speciali (root del repository)
 
@@ -40,5 +40,6 @@ Usare estensione `.txt` per i compiti a risposta aperta che non sia codice, non 
 |------|-------------|
 | `README.md` | Descrizione del repository |
 | `IstruzioniGit.txt` | Guida ai comandi Git |
-| `Le_Normative.md` | Questo file |
 | `gitignore` | Files da ignorare
+
+>La Repo è in continuò aggiornamento, controllare files guida constantemente. 
