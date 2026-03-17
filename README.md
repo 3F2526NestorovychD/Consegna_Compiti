@@ -38,8 +38,8 @@ Usare estensione `.txt` per i compiti a risposta aperta che non sia codice, non 
 
 | File | Descrizione |
 |------|-------------|
-| `README.md` | Descrizione del repository |
+| `gitignore` | Files da ignorare |
 | `IstruzioniGit.txt` | Guida ai comandi Git |
-| `gitignore` | Files da ignorare
+| `README.md` | Descrizione del repository |
 
 >La Repo è in continuò aggiornamento, controllare files guida constantemente. 
