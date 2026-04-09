@@ -1,0 +1,10 @@
+ int __cdecl printf(const char * __restrict__ _Format,...);
+
+
+    punti non compresi:
+
+ #pragma pack(push,_CRT_PACKING) <-- riga 11, cos'è "#pragma"
+
+ unsigned index <-- riga 101, cos'è unn unsigned index
+
+extern <-- riga 156, cos'è e a cosa serve?
