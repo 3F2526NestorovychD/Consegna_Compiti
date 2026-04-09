@@ -10,7 +10,7 @@ void Stampa(int m[N][N]);
 int main(){
     int mat[N][N] = {{1,3,4,5}, {6,57,8,9}, {10,11,12,13}, {3,5,6,9}};
     int mat1[N][N];
-    int tot, scelta;
+    int tot, scelta; // variabile scelta per il 
 
     do {
         printf("\n=======Le presento il nostro meravilgilioso menù=======\n");
