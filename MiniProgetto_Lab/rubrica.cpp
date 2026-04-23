@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <vector> //da cambiare 
 #include <string>
 #include <cstdlib>  
 
@@ -21,7 +21,7 @@ public:
 
 
 void riempimento_array(vector<contatto>& rubrica_da_riempire, int const num) {
-    vector<contatto> database = {
+    vector<contatto> database = { //da cambiare il tipo
         {"Mario", "Rossi", 12345},
         {"Laura", "Bianchi", 67890},
         {"Giuseppe", "Esposito", 11223},
@@ -37,11 +37,11 @@ void riempimento_array(vector<contatto>& rubrica_da_riempire, int const num) {
     for (int i = 0; i < num; i++) {
         int indiceCasuale = rand() % database.size();
         
-        rubrica_da_riempire.push_back(database[indiceCasuale]);
+        rubrica_da_riempire.push_back(database[indiceCasuale]); //da cambiare il tipo
     }
 }
 
-void aggiungi_contatto(vector<contatto>& rubrica, int num*) {
+void aggiungi_contatto(vector<contatto>& rubrica, int num*) { //il vector non va proprio bene
     string n, c;
     int tel;
 
@@ -62,7 +62,7 @@ int main() {
 
     int num_contatti = 8;
     string flag_inizio;
-    int ptr_num_contatti* = num_contatti;
+    int *ptr_num_contatti = num_contatti;
     vector<contatto> rubrica;
     riempimento_array(rubrica, num_contatti);
 
