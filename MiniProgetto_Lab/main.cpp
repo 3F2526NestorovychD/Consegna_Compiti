@@ -28,6 +28,7 @@ void leggi_contatto(Contatto* c, int chiedi_nome) {
 	input_word("Cognome: ", cognome, sizeof(cognome));
 	input_word("Telefono: ", telefono, sizeof(telefono));
 
+	// SEARCH: metodo init non funzione
 	contatto_init(c, nome, cognome, telefono);
 }
 
@@ -58,6 +59,7 @@ int main() {
 				input_word("Cognome: ", cognome, sizeof(cognome));
 				int idx = rubrica_find_sequential(cognome, "", 0);
 				if (idx >= 0) {
+					// SEARCH: chiamare metodo print
 					contatto_print(&rubrica[idx]);
 				} else {
 					std::cout << "Nessun contatto trovato." << std::endl;
@@ -72,6 +74,7 @@ int main() {
 				rubrica_sort();
 				int idx = rubrica_find_binary(cognome, nome, 1);
 				if (idx >= 0) {
+					// SEARCH: il metodo diciamo print
 					contatto_print(&rubrica[idx]);
 				} else {
 					std::cout << "Nessun contatto trovato." << std::endl;
