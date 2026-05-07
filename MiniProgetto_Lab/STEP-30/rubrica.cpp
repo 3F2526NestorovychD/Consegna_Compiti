@@ -7,36 +7,32 @@
 Contatto rubrica[MAX_CONTATTI];
 int rubrica_size = 0;
 
-// SEARCH: usare getter/nome metodo per cognome
 int compare_cognome(const Contatto* a, const Contatto* b) {
-    return std::strcmp(a->cognome, b->cognome);
+    return std::strcmp(a->getCognome(), b->getCognome());
 }
 
-// SEARCH: usare getter/nome metodo per cognome & nome
 int compare_cognome_nome(const Contatto* a, const Contatto* b) {
-    int cmp = std::strcmp(a->cognome, b->cognome);
+    int cmp = std::strcmp(a->getCognome(), b->getCognome());
     if (cmp != 0) {
         return cmp;
     }
-    return std::strcmp(a->nome, b->nome);
+    return std::strcmp(a->getNome(), b->getNome());
 }
 
-// SEARCH: usare init/copia via qwualche metodo
 void copy_contatto(Contatto* target, const Contatto* src) {
     if (!target || !src) {
         return;
     }
-    std::strncpy(target->nome, src->nome, sizeof(target->nome) - 1);
-    target->nome[sizeof(target->nome) - 1] = '\0';
-    std::strncpy(target->cognome, src->cognome, sizeof(target->cognome) - 1);
-    target->cognome[sizeof(target->cognome) - 1] = '\0';
-    std::strncpy(target->telefono, src->telefono, sizeof(target->telefono) - 1);
-    target->telefono[sizeof(target->telefono) - 1] = '\0';
+    target->init(src->getNome(), src->getCognome(), src->getTelefono());
 }
 
-// SEARCH: fai demo senza init o forse proviamo il costruttore
 void rubrica_init_demo(int n) {
-    const Contatto demo[] = {
+    struct DemoEntry {
+        const char* nome;
+        const char* cognome;
+        const char* telefono;
+    };
+    const DemoEntry demo[] = { // SEARCH: forse da cambiare con costruttore
         {"Mario", "Rossi", "12345"},
         {"Laura", "Bianchi", "67890"},
         {"Giuseppe", "Esposito", "11223"},
@@ -59,7 +55,7 @@ void rubrica_init_demo(int n) {
         count = MAX_CONTATTI;
     }
     for (int i = 0; i < count; ++i) {
-        copy_contatto(&rubrica[i], &demo[i]);
+        rubrica[i].init(demo[i].nome, demo[i].cognome, demo[i].telefono);
         rubrica_size++;
     }
 }
@@ -73,13 +69,12 @@ int rubrica_add_unsorted(const Contatto* c) {
     return 1;
 }
 
-// SEARCH: usare compare come metodo
 int rubrica_add_ordered(const Contatto* c) {
     if (!c || rubrica_size >= MAX_CONTATTI) {
         return 0;
     }
     int pos = 0;
-    while (pos < rubrica_size && contatto_compare(&rubrica[pos], c) <= 0) {
+    while (pos < rubrica_size && rubrica[pos].compare(*c) <= 0) {
         pos++;
     }
     for (int i = rubrica_size; i > pos; --i) {
@@ -90,23 +85,21 @@ int rubrica_add_ordered(const Contatto* c) {
     return 1;
 }
 
-// SEARCH: IL metodo print
 void rubrica_list() {
     if (rubrica_size == 0) {
         std::cout << "Rubrica vuota." << std::endl;
         return;
     }
     for (int i = 0; i < rubrica_size; ++i) {
-        contatto_print(&rubrica[i]);
+        rubrica[i].print();
     }
 }
 
-// SEARCH: IL metodo compare
 void rubrica_sort() {
     for (int i = 1; i < rubrica_size; ++i) {
         Contatto key = rubrica[i];
         int j = i - 1;
-        while (j >= 0 && contatto_compare(&rubrica[j], &key) > 0) {
+        while (j >= 0 && rubrica[j].compare(key) > 0) {
             copy_contatto(&rubrica[j + 1], &rubrica[j]);
             j--;
         }
@@ -120,8 +113,8 @@ int rubrica_find_sequential(const char* cognome, const char* nome, int use_nome)
         return -1;
     }
     for (int i = 0; i < rubrica_size; ++i) {
-        if (std::strcmp(rubrica[i].cognome, cognome) == 0) {
-            if (!use_nome || (nome && std::strcmp(rubrica[i].nome, nome) == 0)) {
+        if (std::strcmp(rubrica[i].getCognome(), cognome) == 0) {
+            if (!use_nome || (nome && std::strcmp(rubrica[i].getNome(), nome) == 0)) {
                 return i;
             }
         }
@@ -129,13 +122,12 @@ int rubrica_find_sequential(const char* cognome, const char* nome, int use_nome)
     return -1;
 }
 
-// SEARCH: init come metodo, compare e getter
 int rubrica_find_binary(const char* cognome, const char* nome, int use_nome) {
     if (!cognome) {
         return -1;
     }
     Contatto key;
-    contatto_init(&key, nome ? nome : "", cognome, "");
+    key.init(nome ? nome : "", cognome, "");
 
     int left = 0;
     int right = rubrica_size - 1;
@@ -146,7 +138,7 @@ int rubrica_find_binary(const char* cognome, const char* nome, int use_nome) {
             if (use_nome) {
                 return mid;
             }
-            while (mid > 0 && std::strcmp(rubrica[mid - 1].cognome, cognome) == 0) {
+            while (mid > 0 && std::strcmp(rubrica[mid - 1].getCognome(), cognome) == 0) {
                 mid--;
             }
             return mid;

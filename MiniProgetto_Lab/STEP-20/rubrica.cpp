@@ -7,12 +7,11 @@
 Contatto rubrica[MAX_CONTATTI];
 int rubrica_size = 0;
 
-// SEARCH: usare getter/nome metodo per cognome
 int compare_cognome(const Contatto* a, const Contatto* b) {
     return std::strcmp(a->cognome, b->cognome);
 }
 
-// SEARCH: usare getter/nome metodo per cognome & nome
+
 int compare_cognome_nome(const Contatto* a, const Contatto* b) {
     int cmp = std::strcmp(a->cognome, b->cognome);
     if (cmp != 0) {
@@ -21,7 +20,6 @@ int compare_cognome_nome(const Contatto* a, const Contatto* b) {
     return std::strcmp(a->nome, b->nome);
 }
 
-// SEARCH: usare init/copia via qwualche metodo
 void copy_contatto(Contatto* target, const Contatto* src) {
     if (!target || !src) {
         return;
@@ -34,7 +32,6 @@ void copy_contatto(Contatto* target, const Contatto* src) {
     target->telefono[sizeof(target->telefono) - 1] = '\0';
 }
 
-// SEARCH: fai demo senza init o forse proviamo il costruttore
 void rubrica_init_demo(int n) {
     const Contatto demo[] = {
         {"Mario", "Rossi", "12345"},
@@ -73,7 +70,6 @@ int rubrica_add_unsorted(const Contatto* c) {
     return 1;
 }
 
-// SEARCH: usare compare come metodo
 int rubrica_add_ordered(const Contatto* c) {
     if (!c || rubrica_size >= MAX_CONTATTI) {
         return 0;
@@ -90,7 +86,6 @@ int rubrica_add_ordered(const Contatto* c) {
     return 1;
 }
 
-// SEARCH: IL metodo print
 void rubrica_list() {
     if (rubrica_size == 0) {
         std::cout << "Rubrica vuota." << std::endl;
@@ -101,7 +96,6 @@ void rubrica_list() {
     }
 }
 
-// SEARCH: IL metodo compare
 void rubrica_sort() {
     for (int i = 1; i < rubrica_size; ++i) {
         Contatto key = rubrica[i];
@@ -129,7 +123,6 @@ int rubrica_find_sequential(const char* cognome, const char* nome, int use_nome)
     return -1;
 }
 
-// SEARCH: init come metodo, compare e getter
 int rubrica_find_binary(const char* cognome, const char* nome, int use_nome) {
     if (!cognome) {
         return -1;
