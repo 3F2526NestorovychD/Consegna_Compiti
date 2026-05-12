@@ -1,5 +1,5 @@
 // contatto.cpp
-#include "contatto.h"
+#include "../include/contatto.h"
 
 #include <cstring>
 #include <iostream>

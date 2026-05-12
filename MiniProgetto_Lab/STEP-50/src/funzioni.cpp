@@ -1,5 +1,5 @@
 // funzioni.cpp
-#include "funzioni.h"
+#include "../include/funzioni.h"
 
 #include <iostream>
 

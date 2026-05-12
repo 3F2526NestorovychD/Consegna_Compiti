@@ -1,20 +1,14 @@
 // rubrica.cpp
-#include "rubrica.h"
+#include "../include/rubrica.h"
 
 #include <cstring>
 #include <iostream>
 
-// SEARCH: spostare in attributi privati della classe GestoreContatti
-Contatto rubrica[MAX_CONTATTI];
-int rubrica_size = 0;
-
-// SEARCH: -> metodo privato
-int compare_cognome(const Contatto* a, const Contatto* b) {
+int GestoreContatti::compare_cognome(const Contatto* a, const Contatto* b) const {
     return std::strcmp(a->getCognome(), b->getCognome());
 }
 
-// SEARCH: -> metodo privato
-int compare_cognome_nome(const Contatto* a, const Contatto* b) {
+int GestoreContatti::compare_cognome_nome(const Contatto* a, const Contatto* b) const {
     int cmp = std::strcmp(a->getCognome(), b->getCognome());
     if (cmp != 0) {
         return cmp;
@@ -22,16 +16,19 @@ int compare_cognome_nome(const Contatto* a, const Contatto* b) {
     return std::strcmp(a->getNome(), b->getNome());
 }
 
-// SEARCH: -> metodo privato
-void copy_contatto(Contatto* target, const Contatto* src) {
+
+void GestoreContatti::copy_contatto(Contatto* target, const Contatto* src) {
     if (!target || !src) {
         return;
     }
     target->init(src->getNome(), src->getCognome(), src->getTelefono());
 }
 
-// SEARCH: -> metodo
-void rubrica_init_demo(int n) {
+GestoreContatti::GestoreContatti() {
+    rubrica_size = 0;
+}
+
+void GestoreContatti::init_demo(int n) {
     struct DemoEntry {
         const char* nome;
         const char* cognome;
@@ -50,7 +47,6 @@ void rubrica_init_demo(int n) {
         {"Alice", "Conti", "33445"}
     };
 
-    rubrica_size = 0;
     int max_demo = sizeof(demo) / sizeof(demo[0]);
     int count = n;
     if (count > max_demo) {
@@ -60,14 +56,12 @@ void rubrica_init_demo(int n) {
         count = MAX_CONTATTI;
     }
     for (int i = 0; i < count; ++i) {
-        // SEARCH: accesso contatti tramite attributo privato
         rubrica[i].init(demo[i].nome, demo[i].cognome, demo[i].telefono);
         rubrica_size++;
     }
 }
 
-// SEARCH: -> metodo
-int rubrica_add_unsorted(const Contatto* c) {
+int GestoreContatti::add_unsorted(const Contatto* c) {
     if (!c || rubrica_size >= MAX_CONTATTI) {
         return 0;
     }
@@ -76,13 +70,11 @@ int rubrica_add_unsorted(const Contatto* c) {
     return 1;
 }
 
-// SEARCH: -> metodo
-int rubrica_add_ordered(const Contatto* c) {
+int GestoreContatti::add_ordered(const Contatto* c) {
     if (!c || rubrica_size >= MAX_CONTATTI) {
         return 0;
     }
     int pos = 0;
-    // SEARCH: accesso contatti tramite attributo privato 
     while (pos < rubrica_size && rubrica[pos].compare(*c) <= 0) {
         pos++;
     }
@@ -90,31 +82,32 @@ int rubrica_add_ordered(const Contatto* c) {
         // SEARCH: accesso contatti tramite attributo privato
         copy_contatto(&rubrica[i], &rubrica[i - 1]);
     }
-    // SEARCH: accesso contatti tramite attributo privato della classe
     copy_contatto(&rubrica[pos], c);
     rubrica_size++;
     return 1;
 }
 
-// SEARCH: convertire in metodo pubblico della classe GestoreContatti
-void rubrica_list() {
+void GestoreContatti::list() {
     if (rubrica_size == 0) {
         std::cout << "Rubrica vuota." << std::endl;
         return;
     }
     for (int i = 0; i < rubrica_size; ++i) {
-        // SEARCH: accesso contatti tramite attributo privato
         rubrica[i].print();
     }
 }
 
-// SEARCH: convertire in metodo pubblico della classe GestoreContatti
-void rubrica_sort() {
+void GestoreContatti::print_at(int idx) {
+    if (idx < 0 || idx >= rubrica_size) {
+        return;
+    }
+    rubrica[idx].print();
+}
+
+void GestoreContatti::sort() {
     for (int i = 1; i < rubrica_size; ++i) {
-        // SEARCH: accesso contatti tramite attributo privato
         Contatto key = rubrica[i];
         int j = i - 1;
-        // SEARCH: accesso contatti tramite attributo privato
         while (j >= 0 && rubrica[j].compare(key) > 0) {
             copy_contatto(&rubrica[j + 1], &rubrica[j]);
             j--;
@@ -124,13 +117,11 @@ void rubrica_sort() {
 }
 
 
-// SEARCH: -> metodo
-int rubrica_find_sequential(const char* cognome, const char* nome, int use_nome) {
+int GestoreContatti::find_sequential(const char* cognome, const char* nome, int use_nome) {
     if (!cognome) {
         return -1;
     }
     for (int i = 0; i < rubrica_size; ++i) {
-        // SEARCH: accesso contatti tramite attributo privato 
         if (std::strcmp(rubrica[i].getCognome(), cognome) == 0) {
             if (!use_nome || (nome && std::strcmp(rubrica[i].getNome(), nome) == 0)) {
                 return i;
@@ -140,8 +131,7 @@ int rubrica_find_sequential(const char* cognome, const char* nome, int use_nome)
     return -1;
 }
 
-// SEARCH: ->metodo
-int rubrica_find_binary(const char* cognome, const char* nome, int use_nome) {
+int GestoreContatti::find_binary(const char* cognome, const char* nome, int use_nome) {
     if (!cognome) {
         return -1;
     }
@@ -152,13 +142,11 @@ int rubrica_find_binary(const char* cognome, const char* nome, int use_nome) {
     int right = rubrica_size - 1;
     while (left <= right) {
         int mid = left + (right - left) / 2;
-        // SEARCH: accesso contatti tramite attributo privato
         int cmp = use_nome ? compare_cognome_nome(&rubrica[mid], &key) : compare_cognome(&rubrica[mid], &key);
         if (cmp == 0) {
             if (use_nome) {
                 return mid;
             }
-            // SEARCH: accesso contatti tramite attributo privato
             while (mid > 0 && std::strcmp(rubrica[mid - 1].getCognome(), cognome) == 0) {
                 mid--;
             }

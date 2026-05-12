@@ -1,7 +1,7 @@
 // main.cpp
-#include "contatto.h"
-#include "funzioni.h"
-#include "rubrica.h"
+#include "../include/contatto.h"
+#include "../include/funzioni.h"
+#include "../include/rubrica.h"
 
 #include <iostream>
 
@@ -32,9 +32,8 @@ void leggi_contatto(Contatto* c, int chiedi_nome) {
 }
 
 int main() {
-	// SEARCH: creare oggetto GestoreContatti e usare i metodi
-	// SEARCH: init_demo -> metodo
-	rubrica_init_demo(10);
+	GestoreContatti gestore;
+	gestore.init_demo(10);
 
 	int scelta = -1;
 	while (scelta != 0) {
@@ -43,14 +42,12 @@ int main() {
 
 		switch (scelta) {
 			case 1:
-				// SEARCH: list -> metodo
-				rubrica_list();
+				gestore.list();
 				break;
 			case 2: {
 				Contatto c;
 				leggi_contatto(&c, 1);
-				// SEARCH: add_unsorted -> metodo
-				if (rubrica_add_unsorted(&c)) {
+				if (gestore.add_unsorted(&c)) {
 					std::cout << "Contatto aggiunto." << std::endl;
 				} else {
 					std::cout << "Rubrica piena." << std::endl;
@@ -60,11 +57,9 @@ int main() {
 			case 3: {
 				char cognome[32];
 				input_word("Cognome: ", cognome, sizeof(cognome));
-				// SEARCH: find_sequential -> metodo
-				int idx = rubrica_find_sequential(cognome, "", 0);
+				int idx = gestore.find_sequential(cognome, "", 0);
 				if (idx >= 0) {
-					// SEARCH: accesso contatto tramite gestore
-					rubrica[idx].print(); 
+					gestore.print_at(idx);
 				} else {
 					std::cout << "Nessun contatto trovato." << std::endl;
 				}
@@ -75,13 +70,10 @@ int main() {
 				char nome[32];
 				input_word("Cognome: ", cognome, sizeof(cognome));
 				input_word("Nome: ", nome, sizeof(nome));
-				// SEARCH: sort -> metodo
-				rubrica_sort();
-				// SEARCH: find_binary -> metodo
-				int idx = rubrica_find_binary(cognome, nome, 1);
+				gestore.sort();
+				int idx = gestore.find_binary(cognome, nome, 1);
 				if (idx >= 0) {
-					// SEARCH: accesso contatto tramite gestore
-					rubrica[idx].print();
+					gestore.print_at(idx);
 				} else {
 					std::cout << "Nessun contatto trovato." << std::endl;
 				}
@@ -90,8 +82,7 @@ int main() {
 			case 5: {
 				Contatto c;
 				leggi_contatto(&c, 1);
-				// SEARCH: add_ordered -> metodo
-				if (rubrica_add_ordered(&c)) {
+				if (gestore.add_ordered(&c)) {
 					std::cout << "Contatto aggiunto (ordinato)." << std::endl;
 				} else {
 					std::cout << "Rubrica piena." << std::endl;
