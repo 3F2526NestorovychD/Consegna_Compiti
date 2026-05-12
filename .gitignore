@@ -1,5 +1,12 @@
 .vscode/
+*.exe 
+
+# make
+
+*.o
+*.obj
+*.out
 *.exe
-
-
-
+build/
+bin/
+out/
