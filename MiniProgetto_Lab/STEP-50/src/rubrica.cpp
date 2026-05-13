@@ -79,7 +79,6 @@ int GestoreContatti::add_ordered(const Contatto* c) {
         pos++;
     }
     for (int i = rubrica_size; i > pos; --i) {
-        // SEARCH: accesso contatti tramite attributo privato
         copy_contatto(&rubrica[i], &rubrica[i - 1]);
     }
     copy_contatto(&rubrica[pos], c);
