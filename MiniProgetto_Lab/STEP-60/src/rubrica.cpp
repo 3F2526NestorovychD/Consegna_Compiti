@@ -4,48 +4,10 @@
 #include <cstring>
 #include <iostream>
 
-GestoreContatti::GestoreContatti() {
+GestoreContatti::GestoreContatti(){
 }
 
-GestoreContatti::~GestoreContatti() {
-}
-
-void GestoreContatti::init_demo(int n) {
-    (void)n;
-}
-
-int GestoreContatti::add_unsorted(const Contatto* c) {
-    (void)c;
-    return 0;
-}
-
-int GestoreContatti::add_ordered(const Contatto* c) {
-    (void)c;
-    return 0;
-}
-
-void GestoreContatti::list() {
-}
-
-void GestoreContatti::print_at(int idx) {
-    (void)idx;
-}
-
-void GestoreContatti::sort() {
-}
-
-int GestoreContatti::find_sequential(const char* cognome, const char* nome, int use_nome) {
-    (void)cognome;
-    (void)nome;
-    (void)use_nome;
-    return -1;
-}
-
-int GestoreContatti::find_binary(const char* cognome, const char* nome, int use_nome) {
-    (void)cognome;
-    (void)nome;
-    (void)use_nome;
-    return -1;
+GestoreContatti::~GestoreContatti(){
 }
 
 int GestoreRAMOrdinata::compare_cognome(const Contatto* a, const Contatto* b) const {
@@ -89,7 +51,7 @@ void GestoreRAMOrdinata::init_demo(int n){
         {"Roberto", "Galli", "88990"},
         {"Alice", "Conti", "33445"}
     };
-
+    
     int max_demo = sizeof(demo) / sizeof(demo[0]);
     int count = n;
     if (count > max_demo) {
@@ -129,7 +91,7 @@ int GestoreRAMOrdinata::add_ordered(const Contatto* c) {
     return 1;
 }
 
-void GestoreRAMOrdinata::list() {
+void GestoreRAMOrdinata::lista() const {
     if (rubrica_size == 0) {
         std::cout << "Rubrica vuota." << std::endl;
         return;
@@ -137,6 +99,7 @@ void GestoreRAMOrdinata::list() {
     for (int i = 0; i < rubrica_size; ++i) {
         rubrica[i].print();
     }
+
 }
 
 void GestoreRAMOrdinata::print_at(int idx) {
@@ -178,7 +141,7 @@ int GestoreRAMOrdinata::find_binary(const char* cognome, const char* nome, int u
     }
     Contatto key;
     key.init(nome ? nome : "", cognome, "");
-
+    
     int left = 0;
     int right = rubrica_size - 1;
     while (left <= right) {
@@ -201,3 +164,5 @@ int GestoreRAMOrdinata::find_binary(const char* cognome, const char* nome, int u
     }
     return -1;
 }
+
+

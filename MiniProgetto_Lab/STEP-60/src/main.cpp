@@ -43,7 +43,7 @@ int main() {
 
 		switch (scelta) {
 			case 1:
-				gestore->list();
+				gestore->lista();
 				break;
 			case 2: {
 				Contatto c;
