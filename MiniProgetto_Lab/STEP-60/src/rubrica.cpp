@@ -102,7 +102,7 @@ void GestoreRAMOrdinata::lista() const {
 
 }
 
-void GestoreRAMOrdinata::print_at(int idx) {
+void GestoreRAMOrdinata::print_at(int idx) const {
     if (idx < 0 || idx >= rubrica_size) {
         return;
     }
@@ -121,7 +121,7 @@ void GestoreRAMOrdinata::sort() {
     }
 }
 
-int GestoreRAMOrdinata::find_sequential(const char* cognome, const char* nome, int use_nome) {
+int GestoreRAMOrdinata::find_sequential(const char* cognome, const char* nome, int use_nome) const {
     if (!cognome) {
         return -1;
     }
@@ -135,7 +135,7 @@ int GestoreRAMOrdinata::find_sequential(const char* cognome, const char* nome, i
     return -1;
 }
 
-int GestoreRAMOrdinata::find_binary(const char* cognome, const char* nome, int use_nome) {
+int GestoreRAMOrdinata::find_binary(const char* cognome, const char* nome, int use_nome) const {
     if (!cognome) {
         return -1;
     }
