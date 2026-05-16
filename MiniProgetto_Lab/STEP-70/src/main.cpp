@@ -32,9 +32,8 @@ void leggi_contatto(Contatto* c, int chiedi_nome) {
 }
 
 int main() {
-	GestoreRAMOrdinata gestore_concreto;
+	GestoreMirroredRAM gestore_concreto("rubrica.txt");
 	GestoreContatti* gestore = &gestore_concreto;
-	gestore->init_demo(10);
 
 	int scelta = -1;
 	while (scelta != 0) {

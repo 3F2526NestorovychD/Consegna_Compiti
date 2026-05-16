@@ -42,5 +42,30 @@ public:
     int find_binary(const char* cognome, const char* nome, int use_nome) const override;
 };
 
+class GestoreMirroredRAM : public GestoreContatti {
+private:
+    Contatto rubrica[MAX_CONTATTI];
+    int rubrica_size;
+    const char* file_path;
+
+    int compare_cognome(const Contatto* a, const Contatto* b) const;
+    int compare_cognome_nome(const Contatto* a, const Contatto* b) const;
+    void copy_contatto(Contatto* target, const Contatto* src);
+    int load_from_file();
+    void save_to_file() const;
+public:
+     GestoreMirroredRAM(const char* path = "rubrica.txt");
+    ~GestoreMirroredRAM() override;
+
+    void init_demo(int n) override;
+    int add_unsorted(const Contatto* c) override;
+    int add_ordered(const Contatto* c) override;
+    void lista() const override;
+    void print_at(int idx) const override;
+    void sort() override;
+    int find_sequential(const char* cognome, const char* nome, int use_nome) const override;
+    int find_binary(const char* cognome, const char* nome, int use_nome) const override;
+};
+
 
 #endif

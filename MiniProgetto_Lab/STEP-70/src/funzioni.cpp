@@ -8,7 +8,8 @@ void input_word(const char* prompt, char* buffer, int size) {
 		return;
 	}
 	std::cout << prompt;
-	std::cin >> buffer;
+	std::cin >> std::ws;
+	std::cin.getline(buffer, size);
 }
 
 int input_int(const char* prompt) {
