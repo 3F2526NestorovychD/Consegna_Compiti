@@ -20,9 +20,10 @@ class Bevanda {
 
     virtual void aggiungi_ingredienti() = 0;
     virtual void aggiuntivi_extra() = 0;
+    virtual ~Bevanda() = default;
 };
 
-class caffe : public Bevanda{
+class Caffe : public Bevanda{
     public:
     void aggiungi_ingredienti() override {
         std::cout << "Aggiungo un cucchiaio di caffe in polvere\n";
@@ -40,21 +41,22 @@ class Te : public Bevanda{
     }
 
     void aggiuntivi_extra() override {
-        std::cout << "Aggiungo un po' di limone";
+        std::cout << "Aggiungo un po' di limone\n";
     }
 };
 
 
 int main(){
 
-    Bevanda* gestore[] = {new caffe, new Te} ;
+    Bevanda* gestore[] = {new Caffe, new Te} ;
+    int size = sizeof(gestore) / sizeof(gestore[0]);
 
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < size; i++){
         gestore[i]->preparazione();
-        std::cout << "-------";
+        std::cout << "-------\n";
+        delete gestore[i];
     }
 
-
-
+    getchar();
     return 0;
 }
