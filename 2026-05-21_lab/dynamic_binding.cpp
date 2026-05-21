@@ -55,6 +55,7 @@ int main(){
         gestore[i]->preparazione();
         std::cout << "-------\n";
         delete gestore[i];
+        gestore[i] = nullptr;
     }
 
     getchar();
