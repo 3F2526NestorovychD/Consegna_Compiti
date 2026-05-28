@@ -85,9 +85,9 @@ void stampa_studente(Studente array[], const int LUN, const int idx) {
         return;
     }
     printf("\n=== STUDENTE ===\n");
-    printf("Nome:    %s\n", array[idx].nome);
-    printf("Cognome: %s\n", array[idx].cognome);
-    printf("Voto:    %.2f\n", array[idx].voto);
+    printf("Nome:\t%s\n", array[idx].nome);
+    printf("Cognome:\t%s\n", array[idx].cognome);
+    printf("Voto:\t%.2f\n", array[idx].voto);
 }
 
 void stampa_media(Studente array[], const int LUN) {
