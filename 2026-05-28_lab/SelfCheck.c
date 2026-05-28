@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_STR 30
+#define MAX_STR 20 
 #define MAX_STUD 10
 
 typedef struct {
@@ -24,7 +24,7 @@ int    ricerca(Studente array[], int lun, const char cognome[]);
 
 
 void menu() {
-    printf(  "\nGESTIONE CLASSE\n");
+    printf(  "\n\nGESTIONE CLASSE\n");
     printf(  "1) Stampa studenti\n");
     printf(  "2) Media classe\n");
     printf(  "3) Studente con voto piu alto\n");
@@ -52,9 +52,9 @@ int chiedi_stud() {
 
 int inserimento_array(Studente array[], int lun) {
     for (int i = 0; i < lun; i++) {
-        printf("\nStudente %d\n", i + 1);
+        printf("\n\nStudente %d\n", i + 1);
         printf("Inserisca Nome Cognome Voto: ");
-        if (scanf("%29s %29s %f", array[i].nome, array[i].cognome, &array[i].voto) != 3) {
+        if (scanf("%19s %19s %f", array[i].nome, array[i].cognome, &array[i].voto) != 3) {
             return 1;
         }
     }
@@ -99,7 +99,7 @@ void stampa_media(Studente array[], const int LUN) {
     printf("Media: %.2f\n", media);
 }
 
-int maggVoto(Studente array[],const  int LUN) {
+int maggVoto(Studente array[], const int LUN) {
     int idx = 0;
     for (int i = 1; i < LUN; i++)
         if (array[i].voto > array[idx].voto)
@@ -119,12 +119,15 @@ int ricerca(Studente array[], int lun, const char cognome[]) {
     sort(array, lun);   
 
     int left = 0, right = lun - 1;
+
     while (left <= right) {
         int mid = left + (right - left) / 2;
         int cmp = strcmp(array[mid].cognome, cognome);
         if      (cmp == 0) return mid;
+
         if (cmp  < 0) left = mid + 1;
-        else          right = mid - 1;
+        else          
+        right = mid - 1;
     }
     return -1;
 }
@@ -172,10 +175,10 @@ int main() {
             case 5: {
                 char cognome[MAX_STR];
                 printf("\nInserisca il cognome da cercare: ");
-                scanf("%29s", cognome);
+                scanf("%19s", cognome);
                 int idx = ricerca(array, NUM_STUDENTI, cognome);
                 if (idx == -1)
-                    printf("Studente non trovato.\n");
+                    printf("Studente non fa parte della classe.\n");
                 else
                     stampa_studente(array, NUM_STUDENTI, idx);
                 break;
