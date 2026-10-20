@@ -4,13 +4,13 @@ public class VendingMachine {
     private Display schermo;
 
     public VendingMachine(){
-        vani = new Vano[10]; //da scambiare con una var la lung
-        cassa = new processsPayment;
+        vani = new Vano[10]; 
+        cassa = new processPayment;
         schermo = new Display;
     }
 
     public void caricaVano(int posizione, Prodotto p, int quantita){
-
+        vani[posizione] = new Vano(p, quantita);
     }
 
     public void inserisciMoneta(int val){

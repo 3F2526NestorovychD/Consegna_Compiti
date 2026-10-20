@@ -9,7 +9,7 @@ public class processPayment{
         return 0;
     }
 
-    public int calcolaResto(int prezzo){
-        return 0;
+    public double calcolaResto(double prezzo){
+        return 0.0;
     }
 }
