@@ -1,12 +1,12 @@
 public class Prodotto {
     private final String codice;
     private final String nome;
-    private final int prezzoCent;
+    private final double prezzo;
 
-    public Prodotto(String codice, String nome, int prezzoCent) {
+    public Prodotto(String codice, String nome, double prezzo) {
         this.codice = codice;
         this.nome = nome;
-        this.prezzoCent = prezzoCent;
+        this.prezzo = prezzo;
     }
 
     public String getCodice() {
@@ -17,7 +17,15 @@ public class Prodotto {
         return nome;
     }
 
-    public int getPrezzoCent() {
-        return prezzoCent;
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+    public String getCodice() {
+        return codice;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
